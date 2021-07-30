@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Pro MERN Stack (2nd Edition) - UI",
   "main": "index.js",
+  "engines": {
+    "node": "10.x",
+    "npm": "6.x"
+  },
   "scripts": {
     "#start": "UI server. HMR is enaled in dev mode.",
     "start": "node dist/server.js",
@@ -13,7 +17,8 @@
     "#watch-server-hmr": "Recompile server HMR bundle on changes.",
     "watch-server-hmr": "webpack -w --config webpack.serverHMR.js",
     "#dev-all": "Dev mode: watch for server changes and start UI server",
-    "dev-all": "rm dist/* && npm run watch-server-hmr & sleep 5 && npm start"
+    "dev-all": "rm dist/* && npm run watch-server-hmr & sleep 5 && npm start",
+    "heroku-postbuild": "npm run compile && ln -fs ../node_modules/bootstrap/dist public/bootstrap"
   },
   "repository": {
     "type": "git",
